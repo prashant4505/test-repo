@@ -1,0 +1,89 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/dashboard">Mast Academy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/dashboard">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/addstudent">Add Student</a></li>
+            <li><a class="dropdown-item" href="/deletestudent">Delete Student</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/showstudent">Show All Student</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Staff
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/addstaff">Add Staff</a></li>
+            <li><a class="dropdown-item" href="/deletestaff">Delete Staff</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/showstaff">Show All Staff</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact US</a>
+        </li>
+      </ul>
+      <a href="/">
+      <button class="btn btn-outline-success" name="logout" type="submit">Log Out</button>
+    </a>
+    </div>
+  </div>
+</nav>
+
+
+<!--==========================================================================-->
+  <div class="container" align='center'>
+
+    <h2>Our Team</h2>
+    <p>You Can Never be Great without being insignificant</p>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src={% static "images/Raj.jpg" %} alt="">
+        <h2>Rajpal Maurya</h2>
+        <p>BCA From MJPRU Bareilly</p>
+        <p>MCA From AKTU Lucknow.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src={% static "images/prashantpandey.jpg" %} alt="">
+        <h2>Prashant Pandey</h2>
+        <p>
+        <h5>Founder</h5>
+        </p>
+        <p>BCA From MJPRU Bareilly</p>
+        <p>MCA From AKTU Lucknow.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src={% static "images/PSingh.jpg" %} alt="">
+        <h2>Prashant Singh</h2>
+        <p>BCA From MJPRU Bareilly</p>
+        <p>MCA From AKTU Lucknow.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div>
+
+  </div>
+
+{% endblock %}

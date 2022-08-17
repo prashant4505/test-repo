@@ -1,0 +1,27 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container p-3 mb-2">
+    <H1>Welcome To The Mast Academy</H1>
+    <hr>
+    <form id="form1" action="/dashboard" method="POST">
+        {% csrf_token %}
+        <h2>Login</h2>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" class="form-control" name="uname" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="upass" id="exampleInputPassword1">
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+    </form> 
+    <p align="center">
+    <a href="/signup">New Registration</a>
+</p>
+</div>
+{% endblock %}

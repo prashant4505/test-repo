@@ -1,0 +1,76 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/dashboard">Mast Academy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/dashboard">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Student
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/addstudent">Add Student</a></li>
+            <li><a class="dropdown-item" href="/deletestudent">Delete Student</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/showstudent">Show All Student</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Staff
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/addstaff">Add Staff</a></li>
+            <li><a class="dropdown-item" href="deletestaff">Delete Staff</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/showstaff">Show All Staff</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/contact">Contact US</a>
+        </li>
+      </ul>
+      <a href="/">
+      <button class="btn btn-outline-success" name="logout" type="submit">Log Out</button>
+    </a>
+    </div>
+  </div>
+</nav>
+
+<!--====================================================================================-->
+<h2 class="my-3">Contact US</h2>
+<hr>
+<div class="container">
+    <form action="/contact" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputfname" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="exampleInputfname" name="fname">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="umail" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputqry" class="form-label">Enter Your Query</label><br>
+          <textarea id="w3review" name="qry" rows="4" cols="50"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+{% endblock %}
