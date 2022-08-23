@@ -16,3 +16,5 @@ In this I have created add student, staff page and delete students record and de
 I also create a contact us page in this project where anyone can contact us threw that form.
 
 Screenshots are in static/images folder.
+
+Thank You Very Much!
